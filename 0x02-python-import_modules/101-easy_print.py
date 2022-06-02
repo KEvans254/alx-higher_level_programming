@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-import print_101
+import real_print
