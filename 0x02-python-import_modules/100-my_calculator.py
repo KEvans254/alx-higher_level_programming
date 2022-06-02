@@ -1,24 +1,25 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import sys
+    from sys import argv
     from calculator_1 import add, sub, mul, div
-    a = sys.argv[1]
-    o = sys.argv[2]
-    b = sys.argv[3]
-    i = len(sys.argv) - 1
+    a = int(argv[1])
+    o = argv[2]
+    b = int(argv[3])
+    i = len(argv) - 1
     if i != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit(1)
+        exit(1)
     operator = ["+", "-", "*", "/"]
     if o not in operator:
         print("Unknown operator. Available operators: +, -, * and /")
-        sys.exit(1)
+        exit(1)
     else:
         if o == operator[0]:
-            print("{} {} {} = {}".format(a, o, b, add(int(a), int(b))))
+            result = add(a, b)
         elif o == operator[1]:
-            print("{} {} {} = {}".format(a, o, b, sub(int(a), int(b))))
+            result = sub(a, b)
         elif o == operator[2]:
-            print("{} {} {} = {}".format(a, o, b, mul(int(a), int(b))))
+            result = mul(a, b)
         else:
-            print("{} {} {} = {}".format(a, o, b, div(int(a), int(b))))
+            result = div(a, b)
+        print("{:d} {:s} {:d} = {:d}".format(a, o, b, result))
