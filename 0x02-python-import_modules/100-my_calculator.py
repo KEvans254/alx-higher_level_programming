@@ -2,10 +2,11 @@
 if __name__ == "__main__":
     from sys import argv
     from calculator_1 import add, sub, mul, div
-    a = int(argv[1])
-    o = argv[2]
-    b = int(argv[3])
-    i = len(argv) - 1
+    arguments = argv[1:]
+    a = int(arguments[0])
+    o = arguments[1]
+    b = int(arguments[2])
+    i = len(arguments)
     operator = ["+", "-", "*", "/"]
     if o not in operator:
         print("Unknown operator. Available operators: +, -, * and /")
