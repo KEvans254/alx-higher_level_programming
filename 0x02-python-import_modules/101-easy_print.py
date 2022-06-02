@@ -1,2 +1,2 @@
-#!/usr/bin/bash
-import real_print
+#!/usr/bin/python3
+import print_101
