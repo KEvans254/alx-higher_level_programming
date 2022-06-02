@@ -6,9 +6,6 @@ if __name__ == "__main__":
     o = argv[2]
     b = int(argv[3])
     i = len(argv) - 1
-    if i != 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit(1)
     operator = ["+", "-", "*", "/"]
     if o not in operator:
         print("Unknown operator. Available operators: +, -, * and /")
@@ -23,3 +20,6 @@ if __name__ == "__main__":
         else:
             result = div(a, b)
         print("{:d} {:s} {:d} = {:d}".format(a, o, b, result))
+    if i != 3:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        exit(1)
