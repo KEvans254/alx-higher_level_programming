@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-import math
 """Class that stores the properties of a circumference
 """
+
+
+import math
 
 
 class MagicClass:
