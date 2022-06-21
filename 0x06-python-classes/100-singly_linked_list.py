@@ -31,7 +31,13 @@ class Node:
         self.__next_node = value
 
 
+""" A class that defines a singly linked list
+"""
+
+
 class SinglyLinkedList:
+    """ A class that defines a singly linked list
+    """
     def __str__(self):
         rtn = ""
         ptr = self.__head
