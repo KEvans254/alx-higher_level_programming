@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""Class Square that defines a rectangle.
+    """
+
+
 class Rectangle:
-    """ Empty class """
+    """Class Square that defines a rectangle.
+    """
     pass
