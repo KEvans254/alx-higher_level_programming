@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """ Module for test Square class """
-
-
 import unittest
 from io import StringIO
 from unittest import TestCase
