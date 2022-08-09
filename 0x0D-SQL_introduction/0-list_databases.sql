@@ -1,3 +1,3 @@
 -- Displays all databases
 -- Query to display databases
-SHOW DATABASES;
+mysql -u user -p -e 'show databases;
