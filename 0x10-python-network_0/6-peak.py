@@ -1,28 +1,31 @@
 #!/usr/bin/python3
+""" Finds a peak in a list of unsorted integers
 """
-"""
-def find_peak(A):
-    """find pick element"""
-    if A == []:
+
+
+def find_peak(list_of_integers):
+    """
+    Args:
+        list_of_integers(int): list of integers to find peak of
+    Returns: peak of list_of_integers or None
+    """
+    size = len(list_of_integers)
+    mid_e = size
+    mid = size // 2
+
+    if size == 0:
         return None
 
-    def recursive(A, left=0, right=len(A) - 1):
-        """helper recursive function"""
-
-        mid = (left + right) // 2
-
-        # check if the middle element is greater than its neighbors
-        if ((mid == 0 or A[mid - 1] <= A[mid]) and
-                (mid == len(A) - 1 or A[mid + 1] <= A[mid])):
-            return A[mid]
-
-        # If the left neighbor of `mid` is greater than the middle element,
-        # find the peak recursively in the left sublist
-        if mid - 1 >= 0 and A[mid - 1] > A[mid]:
-            return recursive(A, left, mid - 1)
-
-        # If the right neighbor of `mid` is greater than the middle element,
-        # find the peak recursively in the right sublist
-        return recursive(A, mid + 1, right)
-
-    return recursive(A)
+    while True:
+        mid_e = mid_e // 2
+        if (mid < size - 1 and
+                list_of_integers[mid] < list_of_integers[mid + 1]):
+            if mid_e // 2 == 0:
+                mid_e = 2
+            mid = mid + mid_e // 2
+        elif mid_e > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
+            if mid_e // 2 == 0:
+                mid_e = 2
+            mid = mid - mid_e // 2
+        else:
+            return list_of_integers[mid]
